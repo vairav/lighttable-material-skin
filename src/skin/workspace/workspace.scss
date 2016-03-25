@@ -1,0 +1,25 @@
+#side {
+  // Divider between LHS Workspace panel, and RHS Editor panel
+  .vertical-grip {
+    right: 0;
+    width: 1px;
+  }
+
+  .content {
+    @include reset-padding();
+
+    .workspace {
+      font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+      background-color: $app-background-color;
+      color: $text-color;
+      font-size: 0.8rem;
+
+      &:not(.use-animations) {
+        *, *::before, *::after {
+          transition: none !important;
+          -webkit-animation-duration: 0s !important;
+        }
+      }
+    }
+  }
+}

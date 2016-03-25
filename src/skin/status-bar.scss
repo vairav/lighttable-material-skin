@@ -1,0 +1,39 @@
+#statusbar-container {
+  #find-bar {
+
+  }
+
+  #statusbar {
+    min-height: 2.5rem;
+    line-height: 2.35rem;
+
+    // Should I change the style in general itself?
+    li:not(.left) {
+
+    }
+
+    // Not entirely sure on what this does
+    li.left {
+      .log {
+        .load-wrapper {
+
+        }
+
+        .message {
+
+        }
+      }
+    }
+
+    // Cursor position indicator
+    // Represented as row / column
+    li:nth-child(1) {
+
+    }
+
+    // Total log messages
+    li:nth-child(3) {
+      cursor: pointer;
+    }
+  }
+}

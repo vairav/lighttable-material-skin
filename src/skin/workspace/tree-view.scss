@@ -1,0 +1,245 @@
+#side .content .workspace .folder {
+  // font-weight: normal;
+}
+
+#side .content .workspace .wstree {
+  font-size: 0.8rem;
+  overflow: hidden;
+
+  .root .tree-root {
+    padding: 0;
+    transform: translate3d(0,0,0);
+
+    // <ul> list of file items
+    & > .opened {
+      position: relative;
+
+      &::after {
+        @include selected-item;
+      }
+
+      // <li>'s in file tree
+      li,
+      & > .nav-selected-focused,
+      & > .nav-selected-unfocused {
+        padding: 0;
+        .tree-item {
+          p {
+            font-weight: normal;
+            padding: 0;
+            line-height: 1.5rem;
+            height: 1.5rem;
+            width: 100%;
+            // z-index: 1000;
+
+            // On hover of each item on the file tree
+            &:hover {
+              color: $base-color;
+            }
+
+            // Special case treatment for folder
+            &.folder {
+              &::before {
+                @extend .icon-file-directory--closed;
+                padding-right: 10px;
+              }
+              // color: $accent-text-color;
+              font-weight: normal;
+            }
+          }
+        }
+
+        // Each item in the tree
+        & > .tree-item {
+          // padding-left: 5px;
+
+          // For all folders in our file tree
+          & > p.folder {
+          }
+
+          // For all files in our file tree
+          & > p:not(.folder) {
+
+          }
+
+          // <ul> - Contents of the parent node in tree
+          .sub {
+            // Default state of tree node
+            margin-left: 0;
+            display: none;
+            padding-left: 10px;
+
+            // Opened state for a tree node
+            &.opened {
+              display: block;
+
+              .tree-item {
+                padding: 0;
+              }
+
+              // Accentuate files using their extension, i.e. font color, icon, etc.
+              input[value$=".js"] + .tree-item p {
+                // background: url(icon-pdf.png) left center no-repeat;
+                // padding-left: 30px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+    .name.icon {
+         &.icon-repo::before {
+            margin-right: 0.75rem;
+        }
+         &::before {
+            font-size: 1rem;
+            margin: 0 1.5rem 0 0.5rem;
+        }
+    }
+    li {
+        padding: 0 0.5rem;
+    }
+    li.directory.selected > .list-item {
+        position: relative;
+
+         &::after {
+            @include selected-item;
+        }
+    }
+    li.status-ignored {
+        color: fade($text-color, 30%);
+    }
+     &:focus {
+        li.directory.selected {
+            > .list-item {
+                color: $accent-text-color;
+
+                 &::after {
+                    background-color: $base-color;
+                }
+            }
+             &.status-modified > .list-item {
+                color: darken($md-amber, 30%);
+
+                 &::after {
+                    background-color: lighten(desaturate($md-amber, 25%), 5%);
+                }
+            }
+             &.status-added > .list-item {
+                color: #FFF;
+
+                 &::after {
+                    background-color: $md-light-green;
+                }
+            }
+             &.status-renamed > .list-item {
+                color: #FFF;
+
+                 &::after {
+                    background-color: $md-blue;
+                }
+            }
+             &.status-removed > .list-item {
+                color: #FFF;
+
+                 &::after {
+                    background-color: $md-red;
+                }
+            }
+        }
+        li:not(.list-nested-item), li.list-nested-item > .list-item {
+             &.selected {
+                color: $accent-text-color;
+
+                 &::before {
+                    background-color: $base-color;
+                }
+                .name.icon::before {
+                    color: currentColor;
+                }
+                 &.status-modified {
+                    color: darken($md-amber, 30%);
+
+                     &::before {
+                        background-color: lighten(desaturate($md-amber, 25%), 5%);
+                    }
+                }
+                 &.status-added {
+                    color: #FFF;
+
+                     &::before {
+                        background-color: $md-light-green;
+                    }
+                }
+                 &.status-renamed {
+                    color: #FFF;
+
+                     &::before {
+                        background-color: $md-blue;
+                    }
+                }
+                 &.status-removed {
+                    color: #FFF;
+
+                     &::before {
+                        background-color: $md-red;
+                    }
+                }
+            }
+        }
+    }
+     &.has-collapsable-children .list-nested-item > .list-item::before {
+        z-index: 10;
+    }
+    .panel-contrast  & {
+        background-color: darken($app-background-color, 2%);
+    }
+    .compact-tree-view  & {
+        li:not(.list-nested-item), li.list-nested-item > .list-item {
+            line-height: 1.75rem;
+        }
+        .name.icon::before {
+            margin: 0 0.5rem 0 0;
+        }
+    }
+}
+.tree-view-scroller {
+    transform: translate3d(0, 0, 0);
+    position: relative;
+}
+.compact-tab-bar .tree-view-resizer > .tabBlender {
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+.tabBlender {
+    display: none;
+    position: relative;
+    background: $base-color;
+    color: $accent-text-color;
+    text-transform: uppercase;
+    height: 3rem;
+    line-height: 3rem;
+    pointer-events: none;
+    z-index: 100;
+
+    span::after {
+        padding: 0 1rem;
+        content: 'Projects';
+    }
+    .panel-shadows  & {
+        @include z-depth-1();
+    }
+    .panel-contrast  & {
+        background: darken($base-color, 3%);
+    }
+    .compact-tab-bar  & {
+        line-height: 2.5rem;
+        height: 2.5rem;
+    }
+    .blend-tree-view.tinted-tab-bar  & {
+        display: block;
+    }
+}

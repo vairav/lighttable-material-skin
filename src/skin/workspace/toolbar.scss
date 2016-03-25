@@ -1,0 +1,61 @@
+#side {
+  .content {
+    .workspace {
+      // Default view that is shown when its is Project Structure mode
+      .wstree {
+        // Buttons group that resides as the first row in the left side workspace
+        ul.buttons {
+          @include reset-padding();
+          @include rem(height, 30px);
+
+          min-width: 0;
+          text-align: center;
+          background-color: $base-color;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+
+          li {
+            float: none;
+            text-transform: capitalize;
+
+            display: flex;
+            align-items: center;
+            height: 100%;
+            border-radius: 0;
+
+            // All <li>'s except the ones that contain the class '.sep'
+            &:not(.sep) {
+              &:hover {
+                background-color: lighten($base-color, 10%);
+                cursor: pointer;
+              }
+            }
+
+            // Buttons separator
+            &.sep {
+              @include reset-padding();
+              display: none;
+            }
+
+            // Add proper icons to each toolbar item
+            &:first-child:before,
+            &:nth-child(3):before {
+              font-family: FontAwesome;
+              content: "\f0fe";
+              padding-right: 5px;
+            }
+
+            &:nth-child(5):before {
+              font-family: FontAwesome;
+              content: "\f017";
+              padding-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

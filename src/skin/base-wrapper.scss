@@ -1,0 +1,37 @@
+// Base styles
+// Mostly resets and others
+
+// Baseline size for sass-rem to work properly as it defaults to 10px,
+// but we need 16px as baseline
+$rem-baseline: 16px;
+
+html {
+  @include rem-baseline;
+}
+
+#loader {
+
+}
+
+#wrapper {
+  @include reset-position-all();
+
+  overflow: hidden;
+  -webkit-transition: opacity 0.2s ease-in-out 0.2s;
+
+  #canvas {
+    @include reset-position-all();
+
+    #multi {
+      @include reset-position-all();
+    }
+
+    #side {
+      @include reset-position-all();
+    }
+
+    #right-bar {
+      @include reset-position-all();
+    }
+  }
+}

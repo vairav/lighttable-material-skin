@@ -1,0 +1,35 @@
+#side {
+  .content {
+    .workspace {
+      // Recent files view
+      /*.recent {
+        div {
+          // Heading for Recent files view, i.e. "Select a workspace"
+          h2 {
+            text-transform: uppercase;
+
+            // Right most icon for going back to Project Structure view
+            &::after {
+              cursor: pointer;
+            }
+          }
+
+          // Container for all recent files and folders
+          ul {
+            .folders { // <ul> element
+              li {
+
+              }
+            }
+
+            .files { // <ul> element
+              li {
+
+              }
+            }
+          }
+        }
+      }*/
+    }
+  }
+}
