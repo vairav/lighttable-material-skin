@@ -9,6 +9,10 @@ html {
   @include rem-baseline;
 }
 
+body {
+  background-color: $app-background-color;
+}
+
 #loader {
 
 }

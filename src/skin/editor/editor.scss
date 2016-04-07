@@ -1,0 +1,14 @@
+#multi .tabsets .tabset {
+  .items .content {
+    @include reset-padding();
+
+    top: 30px;
+    right: 0;
+  }
+
+  // Divider between Editor panel, and RHS Actions panel
+  .vertical-grip {
+    right: 0;
+    width: 1px;
+  }
+}

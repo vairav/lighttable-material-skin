@@ -1,0 +1,44 @@
+%filter-list {
+  // Search field at the top
+  input.search {
+    @include rem(height, 30px);
+
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  // Search results, generallly prepoluated with files in project
+  ul {
+    top: 30px;
+
+    li {
+      padding: 5px 5px 5px 10px;
+      border-radius: 0;
+
+      // File name
+      h2 {
+
+      }
+
+      // File location
+      p {
+        color: darken($white, 50%);
+      }
+
+      &.selected {
+        background-color: $base-color;
+
+        // File name when selected
+        h2 {
+
+        }
+
+        // File location when selected
+        p {
+          color: darken($white, 10%);
+        }
+      }
+    }
+  }
+}

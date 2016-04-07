@@ -1,9 +1,3 @@
-/*
- * ATOM-MATERIAL-UI
- * Copyright (c) 2015 Silvestre Herrera and Contributors
- * Find a list of contributors at https://github.com/silvestreh/atom-material-ui/network/members
- */
-
 // Styles from vendor libraries
 // @import "styles/vendor/perfect-scrollbar";
 @import "node_modules/sass-rem/rem";
@@ -25,11 +19,21 @@
 
 @import "skin/base-wrapper";
 
-// @import "styles/atom";
+// Workspace
 @import "skin/workspace/workspace";
 @import "skin/workspace/toolbar";
 @import "skin/workspace/tree-view";
 @import "skin/workspace/recent-files";
+
+// Editor
+@import "skin/editor/tabs";
+@import "skin/editor/editor";
+
+// Actions Pane
+@import "skin/actions/base";
+@import "skin/actions/commands";
+@import "skin/actions/connections";
+@import "skin/actions/navigator";
 
 // @import "styles/autocomplete";
 // @import "styles/buttons";

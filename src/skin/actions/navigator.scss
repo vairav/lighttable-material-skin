@@ -1,0 +1,10 @@
+#wrapper #canvas #right-bar .content {
+  .navigate {
+    &.active {
+      .filter-list {
+        @extend %filter-list;
+      }
+    }
+  }
+
+}

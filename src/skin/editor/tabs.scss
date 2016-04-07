@@ -1,0 +1,81 @@
+#multi {
+  > .tabsets {
+    > .tabset {
+      &.active {
+
+      }
+
+      // Tabs bar
+      .list {
+        @include reset-margin();
+        @include rem(height, 30px);
+
+        // background-color: $base-color;
+        font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+        // List of tabs
+        ul {
+          // Each tab
+          li {
+            overflow: hidden;
+
+            position: relative;
+            padding: 0 0.75rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            overflow: hidden;
+            min-width: 7rem;
+            max-width: 12rem;
+            color: $text-color;
+            transition: min-width 250ms $md-timing-function;
+
+            &::before {
+              position: absolute;
+              content: '';
+              bottom: 0;
+              left: 0;
+              height: 0.125rem;
+              width: 100%;
+              transform: scaleX(0) translateX(50%);
+              transition: transform 250ms $md-timing-function, opacity 250ms $md-timing-function;
+              opacity: 0;
+              background-color: $base-color;
+              z-index: 2000;
+            }
+
+            .file-name {
+
+            }
+
+            .tab-close {
+              // visibility: hidden;
+              text-indent: -9999px;
+
+              &::before {
+                @extend .close-icon;
+                text-indent: 0;
+                float: left;
+              }
+            }
+            // Active tab
+            &.active {
+              // background-color: lighten($base-color, 15%);
+              &::before {
+                opacity: 1;
+                transform: scaleX(1) translateX(0);
+              }
+            }
+
+            &:hover {
+              // background-color: lighten($base-color, 10%);
+            }
+          }
+        }
+      }
+
+      .items {
+
+      }
+    }
+  }
+}

@@ -1,22 +1,49 @@
 #side {
   .content {
     .workspace {
+      &.recents {
+        @include reset-padding();
+      }
+
       // Recent files view
-      /*.recent {
+      .recent {
         div {
           // Heading for Recent files view, i.e. "Select a workspace"
           h2 {
-            text-transform: uppercase;
+            @include reset-padding();
+            @include rem(height, 30px);
+
+            background-color: $base-color;
+            border-radius: 0;
+
+            display: flex;
+            align-items: center;
+
+            // Set hover color
+            &:hover {
+              background-color: lighten($base-color, 10%);
+              cursor: pointer;
+            }
+
+            // Add icon to the left to show back navigation
+            &::before {
+              @extend .back-arrow-circled;
+              padding-left: 5px;
+              padding-right: 10px;
+            }
 
             // Right most icon for going back to Project Structure view
             &::after {
               cursor: pointer;
+              content: '';
             }
           }
 
           // Container for all recent files and folders
           ul {
             .folders { // <ul> element
+              font-weight: normal;
+
               li {
 
               }
@@ -29,7 +56,7 @@
             }
           }
         }
-      }*/
+      }
     }
   }
 }

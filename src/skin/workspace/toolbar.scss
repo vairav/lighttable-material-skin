@@ -29,7 +29,7 @@
             // All <li>'s except the ones that contain the class '.sep'
             &:not(.sep) {
               &:hover {
-                background-color: lighten($base-color, 10%);
+                // background-color: lighten($base-color, 10%);
                 cursor: pointer;
               }
             }
@@ -41,14 +41,14 @@
             }
 
             // Add proper icons to each toolbar item
-            &:first-child:before,
-            &:nth-child(3):before {
+            &:first-child::before,
+            &:nth-child(3)::before {
               font-family: FontAwesome;
               content: "\f0fe";
               padding-right: 5px;
             }
 
-            &:nth-child(5):before {
+            &:nth-child(5)::before {
               font-family: FontAwesome;
               content: "\f017";
               padding-right: 5px;

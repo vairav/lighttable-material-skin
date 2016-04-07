@@ -1,0 +1,19 @@
+#wrapper #canvas #right-bar {
+  left: initial;
+
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  color: $white;
+
+  // Divider between Editor panel, and RHS Actions panel
+  .vertical-grip {
+    left: -2px;
+    right: 0;
+    width: 1px;
+  }
+
+  .content {
+    padding: 0;
+  }
+}
+
+@import "filter-list";

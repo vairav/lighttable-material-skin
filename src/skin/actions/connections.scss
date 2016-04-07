@@ -1,0 +1,60 @@
+#wrapper #canvas #right-bar .content {
+  .clients {
+    &.active {
+      .list {
+        .toggle {
+          &.button {
+            @include rem(height, 30px);
+
+            &.add {
+              // Add button to add new connections
+              margin-bottom: 0;
+
+              &::before {
+                @extend .plus-square-filled-icon;
+                padding-right: 5px;
+              }
+
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+
+        // List of enabled options
+        ul {
+          // Each item in the list
+          li.client-default {
+            &.active {
+
+            }
+
+            // Name of the connection
+            h2 {
+
+            }
+
+            // Details of the connection
+            .details {
+              table {
+                tr {
+                  td {
+
+                  }
+                }
+              }
+
+              .button {
+
+                &.unset {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

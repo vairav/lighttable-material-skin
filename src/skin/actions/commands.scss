@@ -1,0 +1,20 @@
+#wrapper #canvas #right-bar .command {
+  .selector {
+    .filter-list {
+      @extend %filter-list;
+
+      ul li {
+        p {
+          &:first-child {
+            color: $white;
+          }
+
+          // Key binding for the command
+          &.binding {
+
+          }
+        }
+      }
+    }
+  }
+}
